@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Icon from '../images/favicon.png';
+import IconInsta from '../images/instagram.png';
+import IconTikTok from '../images/tiktok.png';
 
 function Footer() {
   return (
@@ -28,9 +30,18 @@ function Footer() {
                 <img width="32" height="32" src={Icon} />
               </Link>
             </div>
-            <div className="text-sm text-gray-600">
-              <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Terms</Link> · <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
+            <br/>
+            <h6 className="text-gray-800 font-medium mb-2">Social Media</h6>
+            <div className="mb-2">
+              {/* Logo */}
+              <a href="http://instagram.com/alvin"><img width="32" height="32" src={IconInsta}/></a>
             </div>
+            <div className="mb-2">
+            <a href="http://tiktok.com/alvin"><img width="32" height="32" src={IconTikTok}/></a>
+            </div>
+            {/* <div className="text-sm text-gray-600">
+              <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Instagram</Link> · <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
+            </div> */}
           </div>
 
           {/* 2nd block */}
@@ -79,17 +90,8 @@ function Footer() {
 
           {/* 4th block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-4">
-            <h6 className="text-gray-800 font-medium mb-2">alvin</h6>
+            <h6 className="text-gray-800 font-medium mb-2">Rechtliches</h6>
             <ul className="text-sm">
-              <li className="mb-2">
-                <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Home</Link>
-              </li>
-              <li className="mb-2">
-                <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">About us</Link>
-              </li>
-              <li className="mb-2">
-                <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Privacy Policy</Link>
-              </li>
               <li className="mb-2">
                 <Link to="/impressum" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Impressum</Link>
               </li>
@@ -97,7 +99,19 @@ function Footer() {
                 <Link to="/AGB" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">AGB</Link>
               </li>
               <li className="mb-2">
-                <Link to="/DSGVO" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">DSGVO</Link>
+                <Link to="/DSGVO" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Datenschutz</Link>
+              </li>
+              </ul>
+              <h6 className="text-gray-800 font-medium mb-2">Unternehmen</h6>
+              <ul className="text-sm">
+              <li className="mb-2">
+                <Link to="/kontakt" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Kontakt</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/FAQ" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">FAQ</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/UberUns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</Link>
               </li>
             </ul>
           </div>
