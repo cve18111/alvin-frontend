@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Icon from '../images/favicon.png';
 
 function Footer() {
   return (
@@ -24,7 +25,7 @@ function Footer() {
                   </defs>
                   <rect width="32" height="32" rx="16" fill="url(#footer-logo)" fillRule="nonzero" />
                 </svg> */}
-                <img width="32" height="32" src="src/favicon.png" />
+                <img width="32" height="32" src={Icon} />
               </Link>
             </div>
             <div className="text-sm text-gray-600">
@@ -87,13 +88,16 @@ function Footer() {
                 <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">About us</Link>
               </li>
               <li className="mb-2">
-                <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Company values</Link>
-              </li>
-              <li className="mb-2">
-                <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Pricing</Link>
-              </li>
-              <li className="mb-2">
                 <Link to="#" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Privacy Policy</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/impressum" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Impressum</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/AGB" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">AGB</Link>
+              </li>
+              <li className="mb-2">
+                <Link to="/DSGVO" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">DSGVO</Link>
               </li>
             </ul>
           </div>
