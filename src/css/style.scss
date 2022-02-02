@@ -57,7 +57,7 @@ body {
 
 .container .box .icon
 {
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -66,6 +66,7 @@ body {
     transition: 0.5s; 
     z-index: 1;
     vertical-align: middle;
+    text-align: center;
 }
 
 .container .box:hover .icon{
@@ -305,4 +306,8 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 input.placeholder-text, textarea.placeholder-text  { 
     color:#CCC;
     font-style:italic;
+}
+
+.faqitem {
+    text-align: left;
 }
