@@ -20,6 +20,7 @@ import Kontakt from './pages/Kontakt';
 import FAQ from './pages/FAQ';
 import UberUns from './pages/UberUns';
 
+
 function App() {
 
   const location = useLocation();
@@ -55,6 +56,7 @@ function App() {
       </Routes>
     </>
   );
+
 }
 
 export default App;

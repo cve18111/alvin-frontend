@@ -321,4 +321,10 @@ input.placeholder-text, textarea.placeholder-text  {
 .zeropadding {
     padding-top: 0px;
 }
-  
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    margin-bottom: 25px;
+  }
