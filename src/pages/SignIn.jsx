@@ -88,14 +88,16 @@ function SignIn() {
 export default SignIn;
 
 import axios from 'axios';
-const emailF = document.getElementById('email');
-const passwordF = document.getElementById('password');
 
 function handleSubmit(e) {
   e.preventDefault();
-  axios.post('http://localhost:3001/users/login', {
-    email: 'admin@alvin.rs',
-    password: 'admin1'
+  var emailF = document.getElementById('email').value;
+  var passwordF = document.getElementById('password').value; 
+  console.log(emailF);
+  console.log(passwordF);
+  axios.post('http://localhost:3001/users/login',{
+    email: emailF,
+    password: passwordF
   })
   .then(function (response) {
     console.log(response);
