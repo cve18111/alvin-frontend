@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from '../utils/Modal';
+import TestimonialImage from '../images/sash.png';
 
 import KartenImage from '../images/alvin-karten.png';
 
@@ -11,6 +12,7 @@ function HeroUberUns() {
     <section className="relative">
 
       {/* Illustration behind hero content */}
+      <a name="ueberuns"> </a>
       <div className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none" aria-hidden="true">
         <svg width="1360" height="578" viewBox="0 0 1360 578" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -34,10 +36,9 @@ function HeroUberUns() {
 
         <link rel="stylesheet" type="text/css" href="style.scss"></link>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"></link>
-
         <div className="text-center pb-12 md:pb-16">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-12" data-aos="zoom-y-out">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Über Uns</span>
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 fillpage">Über Uns</span>
             <span className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-12" data-aos="zoom-y-out"></span></h1>
             <div className="max-w-3xl mx-auto">
               <h2 className="text-xl text-gray-600 mb-12" data-aos="zoom-y-out" data-aos-delay="150">Die Geschichte hinter alvin.</h2>

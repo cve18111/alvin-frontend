@@ -137,7 +137,7 @@ body {
 
 #contact-form {
     background-color:#F2F7F9;
-    width:497px;
+    width: 70%;
     padding:20px;
     margin: 50px auto;    
     border: 6px solid #009999;
@@ -146,6 +146,7 @@ body {
     border-radius:15px;
     position:relative;
 }
+
 
 #contact-form h1 {
     font-size:42px;
@@ -168,7 +169,7 @@ body {
 #contact-form input, 
 #contact-form select, 
 #contact-form textarea {
-    width:450px;
+    width:80%;
     border: 1px solid #CEE1E8;
     margin-bottom:20px;
     padding:4px;
@@ -311,3 +312,13 @@ input.placeholder-text, textarea.placeholder-text  {
 .faqitem {
     text-align: left;
 }
+
+.fillpage {
+    height: 100vh;
+    
+}
+
+.zeropadding {
+    padding-top: 0px;
+}
+  

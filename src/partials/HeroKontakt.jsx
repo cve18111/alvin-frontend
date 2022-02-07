@@ -40,8 +40,8 @@ function HeroKontakt() {
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Kontakt</span>
             <span className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out"></span></h1>
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Die Geschichte hinter alvin.</h2>
-              <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300"></div>
+              <h2 className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Support 24/7 erreichbar.</h2>
+              <div className="max-w-sm mb-8" data-aos="zoom-y-out" data-aos-delay="300"></div>
 
     
             {/* Kontaktformular */}
@@ -78,8 +78,7 @@ function HeroKontakt() {
                 </form>
             </div>
          
-
-
+            
 
 
 

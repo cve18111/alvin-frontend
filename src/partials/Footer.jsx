@@ -30,14 +30,24 @@ function Footer() {
                 <img width="32" height="32" src={Icon} />
               </Link>
             </div>
-            <br/>
+            <ul className="text-sm">
+              <li className="mb-2">
+              <a href="http://localhost:3000/#tools">Tools</a>
+              </li>
+              <li className="mb-2">
+              <a href="http://localhost:3000/#vorteile">Vorteile</a>
+              </li>
+              <li className="mb-2">
+              <a href="http://localhost:3000/#feedback">Feedback</a>
+              </li>
+              </ul>
             <h6 className="text-gray-800 font-medium mb-2">Social Media</h6>
             <div className="mb-2">
               {/* Logo */}
-              <a href="http://instagram.com/alvin"><img width="32" height="32" src={IconInsta}/></a>
+              <a href="http://instagram.com/alvin"><img width="26" height="26" src={IconInsta}/></a>
             </div>
             <div className="mb-2">
-            <a href="http://tiktok.com/alvin"><img width="32" height="32" src={IconTikTok}/></a>
+            <a href="http://tiktok.com/alvin"><img width="26" height="26" src={IconTikTok}/></a>
             </div>
             {/* <div className="text-sm text-gray-600">
               <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Instagram</Link> · <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
@@ -90,7 +100,7 @@ function Footer() {
 
           {/* 4th block */}
           <div className="sm:col-span-6 md:col-span-3 lg:col-span-4">
-            <h6 className="text-gray-800 font-medium mb-2">Rechtliches</h6>
+            <h6 className="text-gray-800 font-medium mb-2" >Rechtliches</h6>
             <ul className="text-sm">
               <li className="mb-2">
                 <Link to="/impressum" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Impressum</Link>
@@ -111,7 +121,10 @@ function Footer() {
                 <Link to="/FAQ" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">FAQ</Link>
               </li>
               <li className="mb-2">
-                <Link to="/UberUns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</Link>
+              <a href="http://localhost:3000/UberUns#ueberuns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</a>
+              </li>
+              <li className="mb-2">
+              <a href="http://localhost:3000/UberUns#team" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Team</a>
               </li>
             </ul>
           </div>
