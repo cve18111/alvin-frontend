@@ -16,6 +16,9 @@ import ResetPassword from './pages/ResetPassword';
 import Impressum from './pages/Impressum';
 import AGB from './pages/agb';
 import DSGVO from './pages/DSGVO';
+import Kontakt from './pages/Kontakt';
+import FAQ from './pages/FAQ';
+import UberUns from './pages/UberUns';
 
 function App() {
 
@@ -46,6 +49,9 @@ function App() {
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/agb" element={<AGB />} />
         <Route path="/dsgvo" element={<DSGVO />} />
+        <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/UberUns" element={<UberUns />} />
       </Routes>
     </>
   );
