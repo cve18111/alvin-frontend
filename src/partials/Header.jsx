@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Icon from '../images/favicon.png';
 
 function Header() {
 
@@ -35,7 +36,7 @@ function Header() {
                 <rect width="32" height="32" rx="16" fill="url(#header-logo)" fillRule="nonzero" />
                
               </svg> */}
-               <img width="32" height="32" src="src/favicon.png" />
+               <img width="32" height="32" src={Icon} />
             </Link>
           </div>
 
