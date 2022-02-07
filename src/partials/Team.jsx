@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from '../utils/Modal';
 
 import HeroImage from '../images/app.png';
+import Jovic from '../images/jovic.jpg';
 
 function Team() {
 
@@ -42,17 +43,20 @@ function Team() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Unser Team</h2>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300"></div>
-              <h3>alvin
-<br/><br/>
-Spengergasse 
-<br/>
-1050 Wien
-<br/>
-Austria
-<br/><br/>
-Tel.: +43 660 6372849
-<br/>
-E-Mail: office@alvin.decoderate.com</h3>
+
+
+              </div>       
+          <div class="container">
+                    <div class="box">
+                      <div class="icon">
+                      <a href="http://instagram.com/alvin"><img width="12" height="12" class="center" src={Jovic}/></a>
+                      <div class="content">
+                        <h3>AGB</h3>
+                            <p>AGB sind die wichtigsten Bestandteile eines Unternehmens</p>
+                        </div>
+                      </div>
+                    </div>
+
           {/* Section header */}
           {/* <div className="text-center pb-12 md:pb-16">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Rechtliches</h1>

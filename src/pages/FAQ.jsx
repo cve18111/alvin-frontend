@@ -3,6 +3,7 @@ import React from 'react';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import HeroFAQ from '../partials/HeroFAQ';
+import HeroKontakt from '../partials/HeroKontakt';
 
 function FAQ() {
     return (
@@ -16,6 +17,7 @@ function FAQ() {
   
           {/*  Page sections */}
           <HeroFAQ />
+          <HeroKontakt />
       
   
         </main>

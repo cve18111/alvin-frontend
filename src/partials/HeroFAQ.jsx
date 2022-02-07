@@ -1,9 +1,47 @@
 import React, { useState } from 'react';
+import Faq from 'react-faq-component';
 import Modal from '../utils/Modal';
 
 import HeroImage from '../images/app.png';
 
 function HeroFAQ() {
+
+  const data = {
+    rows: [
+      {
+        title: "Ist Alvin sicher?",
+        content: "Ja! Alvin verwendet für die Kommunikation zwischen Ihrem Computer und unserer Website eine Verschlüsselung nach Industriestandard (256-bit SSL) oder höher. Dies ist die gleiche Stärke wie bei Geldautomaten (ATMs) und den besten Einzelhandelsgeschäften."
+      },
+      {
+        title: "Wie funktioniert alvin eigentlich?",
+        content: "Ganz einfach. Durch eine Upload funktion, kann man seine Kontoauszüge gemütlich mit alvin synchronisieren. Außerdem verschafft dir alvin den Überblick über deine Ausgaben."
+      },
+      {
+        title: "Curabitur laoreet, mauris vel blandit fringilla",
+        content: "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc"
+      },
+      {
+        title: "What is the package version",
+        content: "v1.0.5"
+      },
+      {
+        title: "What is the package version",
+        content: "v1.0.5"
+      },
+      {
+        title: "What is the package version",
+        content: "v1.0.5"
+      },
+      {
+        title: "What is the package version",
+        content: "v1.0.5"
+      },
+      {
+        title: "What is the package version",
+        content: "v1.0.5"
+      }]
+  }
+  
 
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
@@ -35,6 +73,8 @@ function HeroFAQ() {
         <link rel="stylesheet" type="text/css" href="style.scss"></link>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"></link>
 
+        
+
         <div className="text-center pb-12 md:pb-16">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">FAQ</span>
@@ -42,7 +82,25 @@ function HeroFAQ() {
             <div className="max-w-3xl mx-auto">
               <h2 className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Fragen und Antworten immer parat!</h2>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300"></div>
-              <h3 className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Entscheidung</h3>
+              <div class="faqitem">
+                <Faq 
+                  data={data} 
+                  styles={{
+                      bgColor: "white",
+                      titleTextColor: "#48482a",
+                      rowTitleColor: "#78789a",
+                      rowTitleTextSize: 'large',
+                      rowContentColor: "#48484a",
+                      rowContentTextSize: '16px',
+                      rowContentPaddingTop: '10px',
+                      rowContentPaddingBottom: '10px',
+                      rowContentPaddingLeft: '50px',
+                      rowContentPaddingRight: '150px',
+                      arrowColor: "black",
+                      }
+                    } 
+                  />
+              </div>
 
           {/* Section header */}
           {/* <div className="text-center pb-12 md:pb-16">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '../utils/Modal';
 
-import HeroImage from '../images/app.png';
+import KartenImage from '../images/alvin-karten.png';
 
 function HeroUberUns() {
 
@@ -44,6 +44,11 @@ function HeroUberUns() {
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300"></div>
               <h3 className="text-xl text-gray-700 mb-12" data-aos="zoom-y-out" data-aos-delay="150">Entstehungsgeschichte</h3>
               <p>Wir, als alvin, waren in den letzten Jahren mit einer wachsenden Anzahl an Nachfragen konfrontiert, um mehr über das Thema Blockchain zu sprechen und auch zu lehren. Dies führte uns zu dem Punkt, an dem wir den Andrang der Kunden nach unseren Beratungsdienstleistungen zu etwas Größerem bündeln mussten.<br/></p>
+
+
+          
+
+
 
           {/* Section header */}
           {/* <div className="text-center pb-12 md:pb-16">
