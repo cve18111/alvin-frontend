@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import alvinIMG from '../images/logo_new.png';
 
-
+var sessionToken;
 
 function SignIn() {
   return (
@@ -23,7 +23,7 @@ function SignIn() {
               {/* Page header */}
               <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
               <img  class="center" src={alvinIMG}></img>
-                <h1 className="h1">Welcome back. We exist to make banking easier.</h1>
+                <h1  className="h1">Welcome back. We exist to make banking easier.</h1>
                
               </div>
 
@@ -92,14 +92,16 @@ import axios from 'axios';
 function handleSubmit(e) {
   e.preventDefault();
   var emailF = document.getElementById('email').value;
-  var passwordF = document.getElementById('password').value; 
-  console.log(emailF);
-  console.log(passwordF);
+  var passwordF = document.getElementById('password').value;
   axios.post('http://localhost:3001/users/login',{
     email: emailF,
     password: passwordF
   })
   .then(function (response) {
     console.log(response);
+    console.log(response.data.token);
+    sessionToken=response.data.token;
+    window.location.replace("http://localhost:3000/Dashboard");
   })
 }
+
