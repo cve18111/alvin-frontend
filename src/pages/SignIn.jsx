@@ -99,9 +99,16 @@ function handleSubmit(e) {
   })
   .then(function (response) {
     console.log(response);
+    
+    if(response.status===200){
+    window.location.replace("http://localhost:3000/Dashboard");
     console.log(response.data.token);
     sessionToken=response.data.token;
-    window.location.replace("http://localhost:3000/Dashboard");
+    }else if(response.status===401){
+      //in rot anzeigen email oder pw falsch 
+      return
+    }
   })
 }
 
+//401 Falsch 

@@ -46,87 +46,38 @@ function HeroKontakt() {
     
             {/* Kontaktformular */}
             <div id="contact-form" class="clearfix">
-                <h1>Tritt in Kontakt mit uns!</h1>
+                <h1>Noch Fragen?</h1>
                 <h2>Füll unser Hilfeformular aus mit möglichst vielen Informationen, damit wir dir so schnell wie möglich helfen können!</h2>
+                <h2><b>Wir beantworten eure Fragen innerhalb von 24 Stunden</b></h2>
                 <ul id="errors" class="">
                     <li id="info">Es sind einige Probleme mit deiner Form:</li>
                 </ul>
                 <p id="success">Danke für deine Nachricht! Wir werden dir bald antworten!</p>
-                <form method="post" action="process.php">
+                <form onSubmit={handleSubmit}>
                     <label for="name">Name: <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" placeholder='GG Anderson' required="required" ></input>
+                    
+                    <input type="text" id="name" name="name" placeholder='Alvin Mustermann' required="required" ></input>
                     
                     <label for="email">Email Adresse: <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="jgganderson@beispiel.com" required="required" />
+                    <input type="email" id="email" name="email" placeholder="alvin@mail.com" required="required" />
                     
-                    <label for="telephone">Telefonnummer: </label>
-                    <input type="number" id="telephone" name="telephone" />
+                   
                     
                     <label for="enquiry">Problem: </label>
                     <select id="enquiry" name="enquiry">
-                        <option value="general">Allgemein</option>
-                        <option value="sales">Finanzen</option>
-                        <option value="support">Support</option>
+                        <option value="Allgemein">Allgemein</option>
+                        <option value="Finanzen">Finanzen</option>
+                        <option value="Support">Support</option>
                     </select>
                     
                     <label for="message">Nachricht: <span class="required">*</span></label>
-                    <textarea id="message" name="message" placeholder="Deine Nachricht muss länger als 20 Zeichen sein!" required="required" data-minlength="20"></textarea>
+                    <textarea id="message" name="message" placeholder="Deine Nachricht muss länger als 20 Zeichen sein!" required="required" minlength="20"></textarea>
                     
                     <span id="loading"></span>
                     <input type="submit" value="Senden" id="submit-button" />
                     <p id="req-field-desc"><span class="required">*</span> kennzeichnet ein Pflichtfeld</p>
                 </form>
             </div>
-         
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          {/* Section header */}
-          {/* <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Rechtliches</h1>
-            <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Hier sind unsere Rechte</p>
-                
-          </div>       
-          <div class="container">
-                    <div class="box">
-                        <div class="icon"><i class="far fa-handshake fa-2x" aria-hidden="true"></i></div>
-                        <div class="content">
-                        <h3>AGB</h3>
-                            <p>AGB sind die wichtigsten Bestandteile eines Unternehmens</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="far fa-list-alt fa-2x"></i></div>
-                        <div class="content">
-                            <h3>Impressum</h3>
-                            <p>Impressum sind die wichtigsten Bestandteile eines Unternehmens</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fas fa-book fa-2x"></i></div>
-                        <div class="content">
-                            <h3>DSGVO</h3>
-                            <p>Unternehmensrecht sind die wichtigsten Bestandteile eines Unternehmens</p>
-                        </div>
-                    </div>
-                   
-            </div>
-        </div> */}
         </div>
         </div>
         
@@ -139,3 +90,49 @@ function HeroKontakt() {
 }
 
 export default HeroKontakt;
+
+//const nodemailer = require('nodemailer');
+import axios from 'axios';
+
+function handleSubmit(e) {
+  e.preventDefault();
+  var emailF = document.getElementById('email').value;
+  var nameF = document.getElementById('name').value;
+  var messageF = document.getElementById('message').value;
+  var enquiryF = document.getElementById('enquiry').value;
+
+  axios.post('http://localhost:3001/contacts/create',{
+    email: emailF,
+    name: nameF,
+    message: messageF,
+    enquiry: enquiryF
+  })
+  .then(function (response) {
+    console.log(response);
+    
+  })
+  
+  /* var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'alvingmbh@gmail.com',
+      pass: 'Alvin1234'
+    }
+  });
+
+  var mailOptions = {
+    from: emailF,
+    to: 'alvingmbh@gmail.com',
+    subject: 'Diese Nachricht wurde mithilfe des Kontaktformulars gesendet: von '+nameF+' | Thema: '+enquiryF,
+    text: messageF
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+  }); */
+
+}
