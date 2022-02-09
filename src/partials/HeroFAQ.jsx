@@ -17,29 +17,26 @@ function HeroFAQ() {
         content: "Ganz einfach. Durch eine Upload funktion, kann man seine Kontoauszüge gemütlich mit alvin synchronisieren. Außerdem verschafft dir alvin den Überblick über deine Ausgaben."
       },
       {
-        title: "Curabitur laoreet, mauris vel blandit fringilla",
-        content: "Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc"
+        title: "Wieso ausgerechnet Alvin?",
+        content: "Gerade junge Menschen verlieren durch die bequemen bargeldlosen Zahlungsmethoden oft den Überblick über ihre Finanzen. Die bestehenden Home Banking Systeme bieten oft nur eine Auflistung von Transaktionen an, die monatlichen Fixkosten können so nicht abgelesen werden. Dies führt oft zur Verschuldung am Ende des Monats, wenn abgeschlossene Abos fällig werden."
       },
       {
-        title: "What is the package version",
-        content: "v1.0.5"
+        title: "Wer sind unsere Projektpartner",
+        content: "Decoderate e.U. (E-Mail: office@decoderate.com, https://decoderate.com) Südrandstraße 15, Ugur Avsar, +43 664 5432454"
       },
       {
-        title: "What is the package version",
-        content: "v1.0.5"
+        title: "Was ist unser Ziel?",
+        content: "Mit der App soll auf einem Knopfdruck ersichtlich werden, ob der aktuelle Lebensstil mit den Einkommensverhältnissen gedeckt werden kann. Durch die Abeschätzung des Kontostandes zu Monatsende soll eine drohende Überziehung schnell erkannt werden"
       },
       {
-        title: "What is the package version",
-        content: "v1.0.5"
+        title: "Wie kann ich meine Kontoauszüge hochladen",
+        content: "Der Benutzer erstellt einen Account oder verwendet einen vorhandenen Der Benutzer klickt auf das Feld „Kontoauszug hinzufügen“ Der Benutzer lädt die CSV-Datei seines Kontoauszuges in die App."
       },
       {
-        title: "What is the package version",
-        content: "v1.0.5"
+        title: "Wie aktiviere ich die Elternkontrolle ein",
+        content: "Der Benutzer erteilt den Elternteile die Berechtigung auf Einsehen der jeweiligen Daten und Statistiken des Kindes"
       },
-      {
-        title: "What is the package version",
-        content: "v1.0.5"
-      }]
+      ]
   }
   
 
@@ -101,39 +98,6 @@ function HeroFAQ() {
                     } 
                   />
               </div>
-
-          {/* Section header */}
-          {/* <div className="text-center pb-12 md:pb-16">
-            <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Rechtliches</h1>
-            <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Hier sind unsere Rechte</p>
-                
-          </div>       
-          <div class="container">
-                    <div class="box">
-                        <div class="icon"><i class="far fa-handshake fa-2x" aria-hidden="true"></i></div>
-                        <div class="content">
-                        <h3>AGB</h3>
-                            <p>AGB sind die wichtigsten Bestandteile eines Unternehmens</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="far fa-list-alt fa-2x"></i></div>
-                        <div class="content">
-                            <h3>Impressum</h3>
-                            <p>Impressum sind die wichtigsten Bestandteile eines Unternehmens</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="icon"><i class="fas fa-book fa-2x"></i></div>
-                        <div class="content">
-                            <h3>DSGVO</h3>
-                            <p>Unternehmensrecht sind die wichtigsten Bestandteile eines Unternehmens</p>
-                        </div>
-                    </div>
-                   
-            </div>
-        </div> */}
         </div>
         </div>
         

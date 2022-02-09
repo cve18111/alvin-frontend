@@ -67,7 +67,7 @@ function SignUp() {
                   <div className="border-t border-gray-300 flex-grow ml-3" aria-hidden="true"></div>
                 </div>
                 <div className="text-gray-600 text-center mt-6">
-                  Already using Simple? <Link to="/signin" className="text-blue-600 hover:underline transition duration-150 ease-in-out">Sign in</Link>
+                  Already using alvin? <Link to="/signin" className="text-blue-600 hover:underline transition duration-150 ease-in-out">Sign in</Link>
                 </div>
               </div>
 
@@ -100,8 +100,15 @@ function handleSubmit(e) {
   .then(function (response) {
     console.log(response);
     if(response.status===201)
-    (
-      window.location.replace("http://localhost:3000/Dashboard")
-    )
+    {
+      // Jovic: Register successfull einblenden, sleep 2sekunden
+      window.location.replace("http://localhost:3000/signin")
+    }else if(response.status===401){
+      //in rot anzeigen email oder pw falsch 
+      return
+    }else if(response.status===409){
+      //email exists
+      return
+    }
   })
 }
