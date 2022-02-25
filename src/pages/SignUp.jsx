@@ -91,7 +91,7 @@ function handleSubmit(e) {
   var passwordF = document.getElementById('password').value; 
   var lastnameF = document.getElementById('lastname').value;
   var firstnameF = document.getElementById('firstname').value;
-    axios.post('http://localhost:3001/users/signup',{
+    axios.post('https://api.alvin.credit/users/signup',{
     email: emailF,
     password: passwordF,
     firstname: firstnameF,
@@ -102,7 +102,7 @@ function handleSubmit(e) {
     if(response.status===201)
     {
       // Jovic: Register successfull einblenden, sleep 2sekunden
-      window.location.replace("http://localhost:3000/signin")
+      window.location.replace("https://app.alvin.credit/signin")
     }else if(response.status===401){
       //in rot anzeigen email oder pw falsch 
       return

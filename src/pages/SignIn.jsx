@@ -93,7 +93,7 @@ function handleSubmit(e) {
   e.preventDefault();
   var emailF = document.getElementById('email').value;
   var passwordF = document.getElementById('password').value;
-  axios.post('http://localhost:3001/users/login',{
+  axios.post('https://api.alvin.credit/users/login',{
     email: emailF,
     password: passwordF
   })
@@ -101,7 +101,7 @@ function handleSubmit(e) {
     console.log(response);
     
     if(response.status===200){
-    window.location.replace("http://localhost:3000/Dashboard");
+    window.location.replace("https://app.alvin.credit/Dashboard");
     console.log(response.data.token);
     sessionToken=response.data.token;
     document.cookie = 'loggedin='+sessionToken+';'; 

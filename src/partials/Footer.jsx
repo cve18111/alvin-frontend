@@ -32,22 +32,22 @@ function Footer() {
             </div>
             <ul className="text-sm">
               <li className="mb-2">
-              <a href="http://localhost:3000/#tools">Tools</a>
+              <a href="https://app.alvin.credit/#tools">Tools</a>
               </li>
               <li className="mb-2">
-              <a href="http://localhost:3000/#vorteile">Vorteile</a>
+              <a href="https://app.alvin.credit/#vorteile">Vorteile</a>
               </li>
               <li className="mb-2">
-              <a href="http://localhost:3000/#feedback">Feedback</a>
+              <a href="https://app.alvin.credit/#feedback">Feedback</a>
               </li>
               </ul>
             <h6 className="text-gray-800 font-medium mb-2">Social Media</h6>
             <div className="mb-2">
               {/* Logo */}
-              <a href="http://instagram.com/alvin"><img width="26" height="26" src={IconInsta}/></a>
+              <a href="https://instagram.com/alvin"><img width="26" height="26" src={IconInsta}/></a>
             </div>
             <div className="mb-2">
-            <a href="http://tiktok.com/alvin"><img width="26" height="26" src={IconTikTok}/></a>
+            <a href="https://tiktok.com/alvin"><img width="26" height="26" src={IconTikTok}/></a>
             </div>
             {/* <div className="text-sm text-gray-600">
               <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Instagram</Link> · <Link to="#" className="text-gray-600 hover:text-gray-900 hover:underline transition duration-150 ease-in-out">Privacy Policy</Link>
@@ -121,10 +121,10 @@ function Footer() {
                 <Link to="/FAQ" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">FAQ</Link>
               </li>
               <li className="mb-2">
-              <a href="http://localhost:3000/UberUns#ueberuns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</a>
+              <a href="https://app.alvin.credit/ueber-uns#ueberuns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</a>
               </li>
               <li className="mb-2">
-              <a href="http://localhost:3000/UberUns#team" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Team</a>
+              <a href="https://app.alvin.credit/ueber-uns#team" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Team</a>
               </li>
             </ul>
           </div>
