@@ -104,6 +104,7 @@ function handleSubmit(e) {
     window.location.replace("http://localhost:3000/Dashboard");
     console.log(response.data.token);
     sessionToken=response.data.token;
+    document.cookie = 'loggedin='+sessionToken+';'; 
     }else if(response.status===401){
       //in rot anzeigen email oder pw falsch 
       return
