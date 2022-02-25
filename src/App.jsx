@@ -53,7 +53,7 @@ function App() {
         <Route path="/dsgvo" element={<DSGVO />} />
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/FAQ" element={<FAQ />} />
-        <Route path="/ueber-uns" element={<UberUns />} />
+        <Route path="/UberUns" element={<UberUns />} />
         <Route path="/Dashboard" element={<Dashboard />} />
       </Routes>
     </>
