@@ -1,11 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import Header from '../partials/Header';
 import alvinIMG from '../images/logo_new.png';
 
 
 function SignUp() {
+  const navigate = useNavigate();
+
+  
+  function handleSubmit(e) {
+    e.preventDefault();
+    var emailF = document.getElementById('email').value;
+    var passwordF = document.getElementById('password').value; 
+    var lastnameF = document.getElementById('lastname').value;
+    var firstnameF = document.getElementById('firstname').value;
+      axios.post('https://api.alvin.credit/users/signup',{
+      email: emailF,
+      password: passwordF,
+      firstname: firstnameF,
+      lastname: lastnameF
+    })
+    .then(function (response) {
+      console.log(response);
+      if(response.status===201)
+      {
+        // Jovic: Register successfull einblenden, sleep 2sekunden
+        navigate("/signin",{replace:true});
+      }else if(response.status===401){
+        //in rot anzeigen email oder pw falsch 
+        return
+      }else if(response.status===409){
+        //email exists
+        return
+      }
+    })
+  }
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -83,32 +114,6 @@ function SignUp() {
 
 export default SignUp;
 
-import axios from 'axios';
 
-function handleSubmit(e) {
-  e.preventDefault();
-  var emailF = document.getElementById('email').value;
-  var passwordF = document.getElementById('password').value; 
-  var lastnameF = document.getElementById('lastname').value;
-  var firstnameF = document.getElementById('firstname').value;
-    axios.post('https://api.alvin.credit/users/signup',{
-    email: emailF,
-    password: passwordF,
-    firstname: firstnameF,
-    lastname: lastnameF
-  })
-  .then(function (response) {
-    console.log(response);
-    if(response.status===201)
-    {
-      // Jovic: Register successfull einblenden, sleep 2sekunden
-      window.location.replace("alvin.credit/signin")
-    }else if(response.status===401){
-      //in rot anzeigen email oder pw falsch 
-      return
-    }else if(response.status===409){
-      //email exists
-      return
-    }
-  })
-}
+
+
