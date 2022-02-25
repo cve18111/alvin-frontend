@@ -102,7 +102,7 @@ function handleSubmit(e) {
     if(response.status===201)
     {
       // Jovic: Register successfull einblenden, sleep 2sekunden
-      window.location.replace("https://alvin.credit/signin")
+      window.location.replace("alvin.credit/signin")
     }else if(response.status===401){
       //in rot anzeigen email oder pw falsch 
       return
