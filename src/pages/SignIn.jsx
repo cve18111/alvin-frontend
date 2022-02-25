@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 import Header from '../partials/Header';
 import alvinIMG from '../images/logo_new.png';
@@ -7,6 +8,33 @@ import alvinIMG from '../images/logo_new.png';
 var sessionToken;
 
 function SignIn() {
+  const navigate = useNavigate();
+  
+  function handleSubmit(e) {
+    e.preventDefault();
+    var emailF = document.getElementById('email').value;
+    var passwordF = document.getElementById('password').value;
+    axios.post('https://api.alvin.credit/users/login',{
+      email: emailF,
+      password: passwordF
+    })
+    .then(function (response) {
+      console.log(response);
+      
+      if(response.status===200){
+        navigate("/Dashboard",{replace:true});
+      console.log(response.data.token);
+      sessionToken=response.data.token;
+      document.cookie = 'loggedin='+sessionToken+';'; 
+      }else if(response.status===401){
+        //in rot anzeigen email oder pw falsch 
+        return
+      }
+    })
+  }
+  
+  //401 Falsch 
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -86,30 +114,3 @@ function SignIn() {
 }
 
 export default SignIn;
-
-import axios from 'axios';
-
-function handleSubmit(e) {
-  e.preventDefault();
-  var emailF = document.getElementById('email').value;
-  var passwordF = document.getElementById('password').value;
-  axios.post('https://api.alvin.credit/users/login',{
-    email: emailF,
-    password: passwordF
-  })
-  .then(function (response) {
-    console.log(response);
-    
-    if(response.status===200){
-    window.location.replace("alvin.credit/Dashboard");
-    console.log(response.data.token);
-    sessionToken=response.data.token;
-    document.cookie = 'loggedin='+sessionToken+';'; 
-    }else if(response.status===401){
-      //in rot anzeigen email oder pw falsch 
-      return
-    }
-  })
-}
-
-//401 Falsch 

@@ -9,7 +9,6 @@ import alvinIMG from '../images/logo_new.png';
 function SignUp() {
   const navigate = useNavigate();
 
-  
   function handleSubmit(e) {
     e.preventDefault();
     var emailF = document.getElementById('email').value;

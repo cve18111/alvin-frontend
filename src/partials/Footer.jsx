@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink as Link} from 'react-router-hash-link';
 import Icon from '../images/favicon.png';
 import IconInsta from '../images/instagram.png';
 import IconTikTok from '../images/tiktok.png';
@@ -121,10 +121,10 @@ function Footer() {
                 <Link to="/FAQ" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">FAQ</Link>
               </li>
               <li className="mb-2">
-              <a href="alvin.credit/ueber-uns#ueberuns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</a>
+              <Link to="/ueber-uns#ueberuns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</Link>
               </li>
               <li className="mb-2">
-              <a href="alvin.credit/ueber-uns#team" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Team</a>
+              <Link to="/ueber-uns#team" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Team</Link>
               </li>
             </ul>
           </div>
