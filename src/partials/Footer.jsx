@@ -121,10 +121,10 @@ function Footer() {
                 <Link to="/FAQ" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">FAQ</Link>
               </li>
               <li className="mb-2">
-              <a href="https://app.alvin.credit/UberUns#ueberuns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</a>
+              <a href="https://alvin.credit/ueber-uns#ueberuns" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Über Uns</a>
               </li>
               <li className="mb-2">
-              <a href="https://app.alvin.credit/UberUns#team" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Team</a>
+              <a href="https://alvin.credit/ueber-uns#team" className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out">Team</a>
               </li>
             </ul>
           </div>

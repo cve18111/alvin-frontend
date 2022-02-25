@@ -101,7 +101,7 @@ function handleSubmit(e) {
     console.log(response);
     
     if(response.status===200){
-    window.location.replace("https://app.alvin.credit/Dashboard");
+    window.location.replace("https://alvin.credit/Dashboard");
     console.log(response.data.token);
     sessionToken=response.data.token;
     document.cookie = 'loggedin='+sessionToken+';'; 
