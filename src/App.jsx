@@ -14,7 +14,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import ResetPassword from './pages/ResetPassword';
 import Impressum from './pages/Impressum';
-import AGB from './pages/agb';
+import AGB from './pages/AGB';
 import DSGVO from './pages/DSGVO';
 import Kontakt from './pages/Kontakt';
 import FAQ from './pages/FAQ';
