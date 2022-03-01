@@ -5,9 +5,10 @@ import axios from 'axios';
 import Header from '../partials/Header';
 import alvinIMG from '../images/logo_new.png';
 
-var sessionToken;
+
 
 function SignIn() {
+  var sessionToken;
   const navigate = useNavigate();
   
   function handleSubmit(e) {

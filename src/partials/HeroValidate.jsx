@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-var cookie = document.cookie;
-var afterSplit = cookie.split("=");
-var secondSplit = afterSplit[1].split("[");
-var qrcodePath="data:image/png;base64,"+secondSplit[0];
-var secret=""+secondSplit[1];
-console.log('das secret:'+secret)
 
 function HeroValidate() {
+  var cookie = document.cookie;
+  var afterSplit = cookie.split("=");
+  var secondSplit = afterSplit[1].split("[");
+  var qrcodePath="data:image/png;base64,"+secondSplit[0];
+  var secret=""+secondSplit[1];
+  console.log('das secret:'+secret)
+
   return (
     <section className="relative">
 
