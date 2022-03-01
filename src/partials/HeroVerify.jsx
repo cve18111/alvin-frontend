@@ -17,7 +17,7 @@ function HeroValidate() {
         userId=document.cookie.split(';')[1].split('=')[1];
     }
 
-    axios.get('http://localhost:3001/users/validate/'+userId+'/'+document.getElementById('verify-code').value)
+    axios.get('https://api.alvin.credit/users/validate/'+userId+'/'+document.getElementById('verify-code').value)
     .then(function (response) {
       // handle success
       navigate("/Dashboard",{replace:true});

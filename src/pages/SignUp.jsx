@@ -17,7 +17,7 @@ function SignUp() {
     var passwordF = document.getElementById('password').value; 
     var lastnameF = document.getElementById('lastname').value;
     var firstnameF = document.getElementById('firstname').value;
-      axios.post('http://localhost:3001/users/signup',{
+      axios.post('https://api.alvin.credit/users/signup',{
       email: emailF,
       password: passwordF,
       firstname: firstnameF,

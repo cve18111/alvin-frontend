@@ -15,7 +15,7 @@ function HeroValidate() {
 
   if(qrcodePath==null){
 
-  axios.get('http://localhost:3001/users/path/'+userId)
+  axios.get('https://api.alvin.credit/users/path/'+userId)
     .then(function (response) {
       qrcodePath=response.data.path;  
       
