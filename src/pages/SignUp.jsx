@@ -30,7 +30,6 @@ function SignUp() {
         document.cookie = 'userId=null; max-age=0;'; 
         afterSplit = response.data.message.split(",")
         document.cookie = 'validationcookie='+afterSplit[1]+';'; 
-        document.location.reload();
         return;
       }else if(response.status===401){
         //in rot anzeigen email oder pw falsch 
