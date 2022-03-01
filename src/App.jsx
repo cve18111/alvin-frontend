@@ -19,7 +19,9 @@ import DSGVO from './pages/DSGVO';
 import Kontakt from './pages/Kontakt';
 import FAQ from './pages/FAQ';
 import UberUns from './pages/UberUns';
+import Validate from './pages/Validate';
 import Dashboard from './pages/Dashboard';
+import Verify from './pages/Verify';
 
 
 function App() {
@@ -55,6 +57,8 @@ function App() {
         <Route path="/FAQ" element={<FAQ />} />
         <Route path="/ueber-uns" element={<UberUns />} />
         <Route path="/Dashboard" element={<Dashboard />} />
+        <Route path="/validate" element={<Validate/>}/>
+        <Route path="/verify" element={<Verify/>}/>
       </Routes>
     </>
   );

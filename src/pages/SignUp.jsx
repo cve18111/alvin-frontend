@@ -4,8 +4,8 @@ import axios from 'axios';
 
 import Header from '../partials/Header';
 import alvinIMG from '../images/logo_new.png';
-
-
+import { data } from 'autoprefixer';
+var afterSplit;
 function SignUp() {
   const navigate = useNavigate();
 
@@ -22,11 +22,16 @@ function SignUp() {
       lastname: lastnameF
     })
     .then(function (response) {
-      console.log(response);
+      console.log(response.data.message);
       if(response.status===201)
       {
         // Jovic: Register successfull einblenden, sleep 2sekunden
-        navigate("/signin",{replace:true});
+        document.cookie = 'loggedin=false; max-age=0;'; 
+        document.cookie = 'userId=null; max-age=0;'; 
+        afterSplit = response.data.message.split(",")
+        document.cookie = 'validationcookie='+afterSplit[1]+';'; 
+        document.location.reload();
+        return;
       }else if(response.status===401){
         //in rot anzeigen email oder pw falsch 
         return
@@ -35,7 +40,10 @@ function SignUp() {
         return
       }
     })
+
+  navigate("/validate",{replace:true});
   }
+
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -112,7 +120,3 @@ function SignUp() {
 }
 
 export default SignUp;
-
-
-
-

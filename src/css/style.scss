@@ -328,3 +328,19 @@ input.placeholder-text, textarea.placeholder-text  {
     width: 150px;
     margin-bottom: 25px;
   }
+
+  .form-center {
+    display:flex;
+    justify-content: center;
+  }
+
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.smallf
+{
+    font-size: 11.5px;
+}

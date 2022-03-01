@@ -22,7 +22,8 @@ function SignIn() {
       console.log(response);
       
       if(response.status===200){
-        navigate("/Dashboard",{replace:true});
+        document.cookie = 'userId='+response.data.message+';'; 
+        navigate("/verify",{replace:true});
       console.log(response.data.token);
       sessionToken=response.data.token;
       document.cookie = 'loggedin='+sessionToken+';'; 
