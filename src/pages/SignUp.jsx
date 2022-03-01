@@ -5,9 +5,11 @@ import axios from 'axios';
 import Header from '../partials/Header';
 import alvinIMG from '../images/logo_new.png';
 import { data } from 'autoprefixer';
-var afterSplit;
+
 function SignUp() {
   const navigate = useNavigate();
+  
+  
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -15,21 +17,22 @@ function SignUp() {
     var passwordF = document.getElementById('password').value; 
     var lastnameF = document.getElementById('lastname').value;
     var firstnameF = document.getElementById('firstname').value;
-      axios.post('https://api.alvin.credit/users/signup',{
+      axios.post('http://localhost:3001/users/signup',{
       email: emailF,
       password: passwordF,
       firstname: firstnameF,
       lastname: lastnameF
     })
     .then(function (response) {
-      console.log(response.data.message);
+      console.log(response.data);
       if(response.status===201)
       {
         // Jovic: Register successfull einblenden, sleep 2sekunden
-        document.cookie = 'loggedin=false; max-age=0;'; 
-        document.cookie = 'userId=null; max-age=0;'; 
-        afterSplit = response.data.message.split(",")
-        document.cookie = 'validationcookie='+afterSplit[1]+';'; 
+        var userId=response.data.id;
+        var base32=response.data.base;
+        navigate("/validate?base="+base32+"&id="+userId,{replace:true});
+ 
+        //document.location.reload();
         return;
       }else if(response.status===401){
         //in rot anzeigen email oder pw falsch 
@@ -40,7 +43,7 @@ function SignUp() {
       }
     })
 
-  navigate("/validate",{replace:true});
+   
   }
 
   return (

@@ -1,14 +1,44 @@
+import { Query } from 'mongoose';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function HeroValidate() {
-  var cookie = document.cookie;
-  var afterSplit = cookie.split("=");
-  var secondSplit = afterSplit[1].split("[");
-  var qrcodePath="data:image/png;base64,"+secondSplit[0];
-  var secret=""+secondSplit[1];
-  console.log('das secret:'+secret)
 
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+
+  var userId = urlParams.get('id')
+  var secret = urlParams.get('base');
+  var qrcodePath;
+
+  if(qrcodePath==null){
+
+  axios.get('http://localhost:3001/users/path/'+userId)
+    .then(function (response) {
+      qrcodePath=response.data.path;  
+      
+      document.getElementById("qr-code").innerHTML +=
+      
+      "<img class=\"child\" src="+qrcodePath+">";
+    
+        //remove img1
+        
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+      
+    });
+    console.log(qrcodePath);
+
+  }
+  
+  
   return (
     <section className="relative">
 
@@ -44,7 +74,8 @@ function HeroValidate() {
               <h2 className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Scan the following QR-Code with your Google Authentificator app to continue</h2>
               <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center" data-aos="zoom-y-out" data-aos-delay="300"></div>
           
-              <img class="center"src={qrcodePath}></img>
+             
+              <div class="center parent "id="qr-code"></div><br/><br/><br/><br/><br/><br/>
               <h2 className="text-xl text-gray-600 mb-8" data-aos="zoom-y-out" data-aos-delay="150">Or paste the following Code in your Google Authentificator app</h2>
               <p id="code"className="smallf"><b>{secret}</b></p><br/>
               

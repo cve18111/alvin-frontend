@@ -332,6 +332,8 @@ input.placeholder-text, textarea.placeholder-text  {
   .form-center {
     display:flex;
     justify-content: center;
+    border-width:0px;
+border:none;
   }
 
   input::-webkit-outer-spin-button,
@@ -343,4 +345,11 @@ input::-webkit-inner-spin-button {
 .smallf
 {
     font-size: 11.5px;
+}
+
+.parent{
+    position: relative;
+}
+.child{
+    position: absolute;
 }

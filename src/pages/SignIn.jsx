@@ -15,7 +15,7 @@ function SignIn() {
     e.preventDefault();
     var emailF = document.getElementById('email').value;
     var passwordF = document.getElementById('password').value;
-    axios.post('https://api.alvin.credit/users/login',{
+    axios.post('http://localhost:3001/users/login',{
       email: emailF,
       password: passwordF
     })

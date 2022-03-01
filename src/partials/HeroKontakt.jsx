@@ -101,7 +101,7 @@ function handleSubmit(e) {
   var messageF = document.getElementById('message').value;
   var enquiryF = document.getElementById('enquiry').value;
 
-  axios.post('https://api.alvin.credit/contacts/create',{
+  axios.post('http://localhost:3001/contacts/create',{
     email: emailF,
     name: nameF,
     message: messageF,

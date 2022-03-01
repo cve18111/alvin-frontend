@@ -17,7 +17,7 @@ function HeroValidate() {
         userId=document.cookie.split(';')[1].split('=')[1];
     }
 
-    axios.get('https://api.alvin.credit/users/validate/'+userId+'/'+document.getElementById('verify-code').value)
+    axios.get('http://localhost:3001/users/validate/'+userId+'/'+document.getElementById('verify-code').value)
     .then(function (response) {
       // handle success
       navigate("/Dashboard",{replace:true});
@@ -75,7 +75,7 @@ function HeroValidate() {
         if (!/[0-9]/.test(event.key)) {
           event.preventDefault();
         }
-      }}  className="form-input w-full text-gray-800 text-center h1" placeholder="000000" required />
+      }}  className="form-input w-full text-gray-800 text-center h1 form-center" placeholder="000000" required />
                     </div>
                   </div>
                   <button id="dashb" type="submit" className="btn text-white bg-blue-600 hover:bg-blue-700 w-full mb-4 sm:w-auto sm:mb-0">Verify</button>
