@@ -7,12 +7,43 @@ import Badge from "./Badge";
 import AvatarImage from "../../images/user_empty.png";
 import { darkThemeColor } from "../utils";
 import IconAlvin from '../../images/favicon.png';
+import axios from 'axios';
 function Sidebar() {
+  const queryString = window.location.search;
+
+  const urlParams = new URLSearchParams(queryString);
+
+  var userId = urlParams.get('id')
+  var lastname;
+  var firstname;
+
+  axios.get('http://localhost:3001/users/data/'+userId)
+  .then(function (response) {
+    firstname=response.data.firstname;  
+    console.log(firstname);
+
+    document.getElementById('firstname').innerHTML = firstname;
+
+
+   
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+    
+  });
+
+ 
+  
   return (
     <Container>
     <ProfileContainer>
       <Avatar src={AvatarImage} />
-      <Name>Kishan Sheth</Name>
+
+      <Name id="firstname"> </Name>
     </ProfileContainer>
     <LinksContainer>
       <Links>
