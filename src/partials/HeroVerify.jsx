@@ -20,7 +20,7 @@ function HeroValidate() {
     axios.get('https://api.alvin.credit/users/validate/'+userId+'/'+document.getElementById('verify-code').value)
     .then(function (response) {
       // handle success
-      navigate("/Dashboard",{replace:true});
+      navigate("/Dashboard?id="+userId,{replace:true});
       console.log(response);
     })
     .catch(function (error) {

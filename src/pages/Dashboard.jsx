@@ -1,30 +1,28 @@
 import React from 'react';
-
+import "../partials/App.css"
+import styled from "styled-components";
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
-import HeroKontakt from '../partials/HeroKontakt';
+import Sidebar from '../partials/components/Sidebar';
+import MainContent from '../partials/components/MainContent';
 
 function Dashboard() {
     return (
-      <div className="flex flex-col min-h-screen overflow-hidden">
-  
-        {/*  Site header */}
-        <Header />
-  
-        {/*  Page content */}
-        <main className="flex-grow">
-  
-          {/*  Page sections */}
-          <HeroKontakt />
-      
-  
-        </main>
-  
-        {/*  Site footer */}
-        <Footer />
-  
-      </div>
+       <Container>
+         <Sidebar />
+      <MainContent />
+    </Container>
+ 
     );
   }
-  
+  const Container = styled.div`
+  display: flex;
+  height: 97vh;
+  background: linear-gradient(to bottom right, white 0%, #e6e4ff 70%);
+  border-radius: 2rem;
+  @media screen and (min-width: 320px) and (max-width: 1080px) {
+    flex-direction: column;
+  }
+`;
+
   export default Dashboard;

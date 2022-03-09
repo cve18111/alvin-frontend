@@ -10,7 +10,9 @@ function HeroValidate() {
   const urlParams = new URLSearchParams(queryString);
 
   var userId = urlParams.get('id')
+  //könnte aus sicherheitsgründen im backend angepasst werden bei get path
   var secret = urlParams.get('base');
+  //var secret;
   var qrcodePath;
 
   if(qrcodePath==null){
@@ -18,7 +20,7 @@ function HeroValidate() {
   axios.get('https://api.alvin.credit/users/path/'+userId)
     .then(function (response) {
       qrcodePath=response.data.path;  
-      
+      //secret=response.data.secret;
       document.getElementById("qr-code").innerHTML +=
       
       "<img class=\"child\" src="+qrcodePath+">";
