@@ -1,36 +1,125 @@
 import React from "react";
+import { useNavigate} from 'react-router-dom';
 import styled from "styled-components";
 import { RiHomeLine, RiFileCopyLine } from "react-icons/ri";
 import { FaWallet } from "react-icons/fa";
 import { AiOutlinePieChart } from "react-icons/ai";
+import { BiLogOut } from "react-icons/bi";
 import Badge from "./Badge";
 import AvatarImage from "../../images/user_empty.png";
 import { darkThemeColor } from "../utils";
 import IconAlvin from '../../images/favicon.png';
+import axios from 'axios';
+
 function Sidebar() {
+  const navigate = useNavigate();
+
+  document.cookie = 'validationcookie=success; expires = Thu, 01 Jan 1970 00:00:00 GMT'; 
+  document.cookie = 'userId=success; expires = Thu, 01 Jan 1970 00:00:00 GMT'; 
+  var cookies =  document.cookie;
+  var afterSplit=cookies.split("=");
+  var token=afterSplit[1];
+  const AuthStr = 'Bearer '+token; 
+  console.log(AuthStr);
+
+  const queryString = window.location.search;
+
+  const urlParams = new URLSearchParams(queryString);
+
+  var userId = urlParams.get('id')
+  var lastname;
+  var firstname;
+  var name;
+
+  axios.get('http://localhost:3001/users/data/'+userId, { headers: { Authorization: AuthStr } })
+  .then(function (response) {
+    if(response.status===401)
+      {
+        navigate("/signin",{replace:true});
+        return;
+      }
+      if(response.status===200)
+      {
+        firstname=response.data.firstname;  
+        lastname=response.data.lastname;
+    
+         name= firstname+' '+lastname;
+
+         document.getElementById('name').innerHTML = name;
+         return;
+      }
+      if(response.status===304)
+      {
+        firstname=response.data.firstname;  
+        lastname=response.data.lastname;
+    
+         name= firstname+' '+lastname;
+
+         document.getElementById('name').innerHTML = name;
+         return;
+      }
+    
+   
+  })
+  .catch(function (error) {
+    // handle error
+    navigate("/signin",{replace:true});
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+    
+    
+  });
+
+  function logout(){
+    navigate("/",{replace:true});
+  }
+  function upload(){
+    navigate("/upload?id="+userId,{replace:true});
+  }
+  function bills(){
+    navigate("/bills?id="+userId,{replace:true});
+  }
+  function dashb(){
+    navigate("/Dashboard?id="+userId,{replace:true});
+  }
+
+
+
   return (
     <Container>
     <ProfileContainer>
+    {/* <br/>
+     <IconAlv>
+     
+      <img src={IconAlvin} width="100px"></img>
+    </IconAlv> */}
       <Avatar src={AvatarImage} />
-      <Name>Kishan Sheth</Name>
+
+      <Name id="name"> Loading ... </Name>
     </ProfileContainer>
     <LinksContainer>
       <Links>
-        <Link>
+        <Link onClick={() => logout()}>
           <RiHomeLine />
           <h3>Home</h3>
         </Link>
-        <Link>
+        <Link onClick={() => dashb()}>
           <RiFileCopyLine />
           <h3>Dashboard</h3>
         </Link>
-        <Link>
+        <Link onClick={() => bills()}>
           <FaWallet />
           <h3>Bills</h3>
         </Link>
-        <Link>
+        <Link onClick={() => upload()}>
           <AiOutlinePieChart />
           <h3>Upload</h3>
+        </Link>
+        <Link onClick={() => logout()}>
+          <BiLogOut/>
+          <h3>Logout</h3>
         </Link>
       </Links>
     </LinksContainer>
@@ -51,6 +140,12 @@ const Container = styled.div`
     width: 100%;
     height: max-content !important;
   }
+`;
+
+const IconAlv = styled.div`
+
+background-color: white;
+
 `;
 
 const ProfileContainer = styled.div`

@@ -1,21 +1,30 @@
 import React from "react";
 import styled from "styled-components";
+
+import { useNavigate } from 'react-router-dom';
 import { FaSlack } from "react-icons/fa";
+import { FaWallet } from "react-icons/fa";
 import { darkThemeColor, hoverEffect, themeColor } from "../utils";
 function JoinSlack() {
+  const navigate = useNavigate();
+
+  function upload(){
+    navigate("/upload",{replace:true});
+  }
+
   return (
     <JoinChannel>
       <CardContent flex={true}>
         <Slack>
           <SlackLogo>
-            <FaSlack />
+            <FaWallet />
           </SlackLogo>
           <SlackText>
-            <SlackHead>Engage with clients</SlackHead>
-            <SlackFoot>Join slack channel</SlackFoot>
+            <SlackHead>Upload your bills from your bank account.</SlackHead>
+            <SlackFoot>Automically calculate the incoming expenses.</SlackFoot>
           </SlackText>
         </Slack>
-        <SlackJoin>Join Now</SlackJoin>
+        <SlackJoin onClick={() => upload()}>Upload</SlackJoin>
       </CardContent>
     </JoinChannel>
   );

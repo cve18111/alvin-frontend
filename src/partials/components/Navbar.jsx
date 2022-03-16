@@ -1,21 +1,83 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 import { FiSearch } from "react-icons/fi";
 import Logo from "../../images/logo_new.png"
+import axios from 'axios';
 function Navbar() {
+  const navigate = useNavigate();
+
+  document.cookie = 'validationcookie=success; expires = Thu, 01 Jan 1970 00:00:00 GMT'; 
+  document.cookie = 'userId=success; expires = Thu, 01 Jan 1970 00:00:00 GMT'; 
+  var cookies =  document.cookie;
+  var afterSplit=cookies.split("=");
+  var token=afterSplit[1];
+  const AuthStr = 'Bearer '+token; 
+  console.log(AuthStr);
+
+
+
+  const queryString = window.location.search;
+
+  const urlParams = new URLSearchParams(queryString);
+
+  var userId = urlParams.get('id')
+  
+  var firstname;
+
+  axios.get('http://localhost:3001/users/data/'+userId, { headers: { Authorization: AuthStr } })
+  .then(function (response) {
+    if(response.status===401)
+      {
+        navigate("/signin",{replace:true});
+        return;
+      }
+    if(response.status===200)
+      {
+        firstname=response.data.firstname;  
+    
+    
+  
+        document.getElementById('gm').innerHTML = ' '+firstname;
+         return;
+      }
+      if(response.status===304)
+      {
+        firstname=response.data.firstname;  
+    
+    
+  
+        document.getElementById('gm').innerHTML = ' '+firstname;
+         return;
+      }
+   
+
+   
+  })
+  .catch(function (error) {
+    // handle error
+    navigate("/signin",{replace:true});
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+    
+  });
+
+
   return (
     <NavbarContainer>
       <Text>
         Good morning,
-        <span> Kishan</span>
+      <span id="gm" ></span>
       </Text>
-     
+{/*      
       <InputContainer>
         <Icon>
-        <img src={Logo}></img>
+     <img src={Logo}></img> 
         </Icon>
        
-      </InputContainer>
+      </InputContainer> */}
     </NavbarContainer>
   );
 }
