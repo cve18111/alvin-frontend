@@ -4,21 +4,54 @@ import { IoStatsChart } from "react-icons/io5";
 import { themeColor, hoverEffect } from "../utils";
 import JoinSlack from "./JoinSlack";
 
+import Papa from "papaparse";
+
 import { darkThemeColor} from "../utils";
 
 function HeroUpload() {
+
+  const changeHandler = (event) => {
+    // Passing file data (event.target.files[0]) to parse using Papa.parse
+    Papa.parse(event.target.files[0], {
+      header: true,
+      skipEmptyLines: true,
+      complete: function (results) {
+        const rowsArray = [];
+        const valuesArray = [];
+
+        // Iterating data to get column name and their values
+        results.data.map((d) => {
+          rowsArray.push(Object.keys(d));
+          valuesArray.push(Object.values(d));
+        });
+
+        // Parsed Data Response in array format
+        
+        for(var i=0;i<results.data.length;i++){
+          console.log(results.data[i]);
+
+        }
+      
+      },
+    });
+  };
+  
+  
+
+
   return (
       <JoinChannel>
       <CardContent flex={true}>
       <Slack>
-      <form action="/action_page.php" 
-        enctype="multipart/form-data"
+      <form  
+        
        >
   
         <label for="myfile">Select a file:</label>
   
-        <input  accept=".csv" type="file" id="myfile" 
-            name="myfile" multiple="multiple" />
+        <input  accept=".csv" type="file" id="csvFileInput" 
+            name="csvFileInput" multiple="multiple" 
+            onChange={changeHandler}/>
           
         <br /><br />
       
