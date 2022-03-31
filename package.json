@@ -11,6 +11,7 @@
     "@tailwindcss/forms": "^0.4.0",
     "aos": "^3.0.0-beta.6",
     "axios": "^0.25.0",
+    "dompurify": "^2.3.6",
     "i": "^0.3.7",
     "mdb-react-ui-kit": "^2.3.0",
     "mongoose": "^6.2.0",

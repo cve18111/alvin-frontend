@@ -23,6 +23,10 @@ import Validate from './pages/Validate';
 import Dashboard from './pages/Dashboard';
 import Verify from './pages/Verify';
 import Upload from './pages/Upload';
+import Transactions from './pages/Transactions';
+import Bills from './pages/Bills';
+
+
 
 
 function App() {
@@ -61,6 +65,9 @@ function App() {
         <Route path="/validate" element={<Validate/>}/>
         <Route path="/verify" element={<Verify/>}/>
         <Route path="/upload" element={<Upload/>}/>
+        <Route path="/Transactions" element={<Transactions/>}/>
+        <Route path="/Bills" element={<Bills/>}/>
+
       </Routes>
     </>
   );

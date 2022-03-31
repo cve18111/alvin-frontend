@@ -3,12 +3,23 @@ import styled from "styled-components";
 import { IoStatsChart } from "react-icons/io5";
 import { themeColor, hoverEffect } from "../utils";
 import JoinSlack from "./JoinSlack";
+import axios from 'axios';
 
 import Papa from "papaparse";
 
-import { darkThemeColor} from "../utils";
+import { darkThemeColor } from "../utils";
 
 function HeroUpload() {
+
+
+  var datei;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  var userNummer = urlParams.get('id');
+  console.log("USERID:" + userNummer);
+
+
+
 
   const changeHandler = (event) => {
     // Passing file data (event.target.files[0]) to parse using Papa.parse
@@ -24,43 +35,109 @@ function HeroUpload() {
           rowsArray.push(Object.keys(d));
           valuesArray.push(Object.values(d));
         });
-
+        datei = results;
         // Parsed Data Response in array format
-        
-        for(var i=0;i<results.data.length;i++){
-          console.log(results.data[i]);
 
+        for (var i = 0; i < results.data.length; i++) {
+          console.log(results.data[i]);
+          var txt = JSON.stringify(results.data[i]);
+          var obj = JSON.parse(txt);
+
+
+          console.log("Datum: " + obj.Datum);
+
+          //Senden an DB
+
+          axios.post('http://localhost:3001/transactions/upload', {
+            reciepient: obj.Empfänger,
+           date: Date.parse(obj.Datum) ,
+
+          
+            
+            amountEur: obj["Betrag (EUR)"],
+
+            userId: userNummer
+
+          })
+            .then(function (response) {
+              console.log(response.data);
+              if (response.status === 201) {
+                // Jovic: Register successfull einblenden, sleep 2sekunden
+                // var userId=response.data.id;
+                //  var base32=response.data.base;
+                //  navigate("/validate?base="+base32+"&id="+userId,{replace:true});
+
+                document.location.reload();
+                return;
+              } else if (response.status === 401) {
+                //in rot anzeigen email oder pw falsch 
+                return
+              } else if (response.status === 409) {
+                //email exists
+                return
+              }
+            })
         }
+
+        axios.get('http://localhost:3001/transactions/fixcost/'+userNummer)
+    .then(function (request) {
+      // handle success
+
+      console.log(request.data.entry[0]._id.Empfaenger);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .then(function () {
+      // always executed
+    });
+
+        //Nachdem alle Daten geladen wurden muss die Seite refreshed werden da sonst folgendes Problem auftritt: 
+        //Klickt man nach dem Upload auf Dashboard lädt der Name nicht mehr (Loading...)
+        //Mit diesem kleinen Reload wird das Problem beseitigt
       
+       document.location.reload();
+
       },
     });
   };
-  
-  
+
+
+
+
+
 
 
   return (
-      <JoinChannel>
+    <JoinChannel>
       <CardContent flex={true}>
-      <Slack>
-      <form  
-        
-       >
-  
-        <label for="myfile">Select a file:</label>
-  
-        <input  accept=".csv" type="file" id="csvFileInput" 
-            name="csvFileInput" multiple="multiple" 
-            onChange={changeHandler}/>
-          
-        <br /><br />
-      
-        <input type="submit" />
-    </form>
-    </Slack>
-    </CardContent >
+        <Slack>
+          <form
+
+          >
+
+            <label for="myfile">Select a file:</label>
+
+            <input accept=".csv" type="file" id="csvFileInput"
+              name="csvFileInput" multiple="multiple"
+              onChange={changeHandler} />
+
+            <br /><br />
+
+            <input type="submit" />
+          </form>
+
+
+
+
+
+
+
+        </Slack>
+      </CardContent >
     </JoinChannel>
-      
+
   );
 }
 

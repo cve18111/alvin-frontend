@@ -3,6 +3,7 @@ import { useNavigate} from 'react-router-dom';
 import styled from "styled-components";
 import { RiHomeLine, RiFileCopyLine } from "react-icons/ri";
 import { FaWallet } from "react-icons/fa";
+import {MdArticle} from "react-icons/md"
 import { AiOutlinePieChart } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 import Badge from "./Badge";
@@ -84,7 +85,12 @@ function Sidebar() {
   function dashb(){
     navigate("/Dashboard?id="+userId,{replace:true});
   }
-
+  function trans(){
+    navigate("/Transactions?id="+userId,{replace:true});
+  }
+  function bills(){
+    navigate("/Bills?id="+userId,{replace:true});
+  }
 
 
   return (
@@ -112,6 +118,10 @@ function Sidebar() {
         <Link onClick={() => bills()}>
           <FaWallet />
           <h3>Bills</h3>
+        </Link>
+        <Link onClick={() => trans()}>
+          < MdArticle/>
+          <h3>Uploaded Transactions</h3>
         </Link>
         <Link onClick={() => upload()}>
           <AiOutlinePieChart />
