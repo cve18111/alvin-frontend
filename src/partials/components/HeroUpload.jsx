@@ -48,7 +48,7 @@ function HeroUpload() {
 
           //Senden an DB
 
-          axios.post('http://localhost:3001/transactions/upload', {
+          axios.post('https://api.alvin.credit/transactions/upload', {
             reciepient: obj.Empfänger,
            date: Date.parse(obj.Datum) ,
 
@@ -79,7 +79,7 @@ function HeroUpload() {
             })
         }
 
-        axios.get('http://localhost:3001/transactions/fixcost/'+userNummer)
+        axios.get('https://api.alvin.credit/transactions/fixcost/'+userNummer)
     .then(function (request) {
       // handle success
 

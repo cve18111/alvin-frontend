@@ -24,7 +24,7 @@ function loopy() {
   var date;
   var reciepient;
   var amount;
-  /*  axios.get('http://localhost:3001/transactions/' + userNummer)
+  /*  axios.get('https://api.alvin.credit/transactions/' + userNummer)
       .then(function (response) {
         if (response.status === 401) {
           console.log("401 err")
@@ -55,7 +55,7 @@ function loopy() {
   */
 
 //Alle doppelten Einträge finden (Abfrage kommt ohne Datum - ist ein GroupBy) - alle doppelten sind also potenzielle Fixkosten
-      axios.get('http://localhost:3001/transactions/fixcost/'+userNummer)
+      axios.get('https://api.alvin.credit/transactions/fixcost/'+userNummer)
       .then(function (request) {
         // handle success
 
@@ -95,7 +95,7 @@ function loopy() {
             console.log("Print i: "+ i);
 
 
-            axios.get('http://localhost:3001/transactions/'+userNummer+'/'+doubles[i].empfaenger+'/'+doubles[i].betrag)
+            axios.get('https://api.alvin.credit/transactions/'+userNummer+'/'+doubles[i].empfaenger+'/'+doubles[i].betrag)
             .then(function (request) {
 
               console.log("Alle Transaktionen der Fixkoste Nummer "+i);
@@ -137,7 +137,7 @@ async function loopywhoopy(){
 
       
 
-      const loopresponse= await axios.get('http://localhost:3001/transactions/'+userNummer+'/'+doubles[i].empfaenger+'/'+doubles[i].betrag);
+      const loopresponse= await axios.get('https://api.alvin.credit/transactions/'+userNummer+'/'+doubles[i].empfaenger+'/'+doubles[i].betrag);
        
 
         transData.push(loopresponse);

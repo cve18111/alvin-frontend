@@ -23,7 +23,7 @@ function loop(){
   var date;
   var reciepient;
   var amount;
-  axios.get('http://localhost:3001/transactions/' + userNummer)
+  axios.get('https://api.alvin.credit/transactions/' + userNummer)
     .then(function (response) {
       if (response.status === 401) {
         console.log("401 err")

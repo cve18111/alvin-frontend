@@ -25,7 +25,7 @@ function Navbar() {
   
   var firstname;
 
-  axios.get('http://localhost:3001/users/data/'+userId, { headers: { Authorization: AuthStr } })
+  axios.get('https://api.alvin.credit/users/data/'+userId, { headers: { Authorization: AuthStr } })
   .then(function (response) {
     if(response.status===401)
       {
