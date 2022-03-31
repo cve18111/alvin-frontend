@@ -97,7 +97,6 @@ function HeroUpload() {
         //Klickt man nach dem Upload auf Dashboard lädt der Name nicht mehr (Loading...)
         //Mit diesem kleinen Reload wird das Problem beseitigt
       
-       document.location.reload();
 
       },
     });
